@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+
 export const StateContext = createContext({
   currentUser: null,
   token: null,
@@ -25,5 +26,4 @@ const ContextProvider = ({ children }) => {
     </StateContext.Provider>
   );
 };
-
 export default ContextProvider;

@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { StateContext } from "../context/contextProvider";
+import { StateContext } from "../context/ContextProvider";
 
 const Secondary = () => {
   const { token } = useContext(StateContext);
+
   if (token) {
-    return <Navigate to={"/users"}></Navigate>;
+    return <Navigate to={"/"}></Navigate>;
   }
   return (
     <>

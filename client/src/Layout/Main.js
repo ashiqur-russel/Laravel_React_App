@@ -1,17 +1,39 @@
 import React, { useContext } from "react";
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet, Navigate, Link } from "react-router-dom";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-import { StateContext } from "../context/contextProvider";
+import { StateContext } from "../context/ContextProvider";
 const Main = () => {
   const { user, token } = useContext(StateContext);
-  if (!token) {
+  /*  if (!token) {
     return <Navigate to={"/login"}></Navigate>;
-  }
+  } */
   return (
     <>
-      <Navbar></Navbar>
-      <Outlet></Outlet>
+      <div id="defaultLayout">
+        <aside className="sidebar">
+          <div className="btngroup">
+            <div className="btn">
+              <Link to={"/dashboard"}>Dashboard</Link>
+            </div>
+            <div className="btn">
+              <Link to={"/users"}>Users</Link>
+            </div>
+            <div className="btn">
+              <Link to={"/"}>Home</Link>
+            </div>
+          </div>
+        </aside>
+        <div className="content">
+          <header>
+            <div>Header</div>
+            <div>User Info</div>
+          </header>
+          <main>
+            <Outlet></Outlet>
+          </main>
+        </div>
+      </div>
       <Footer></Footer>
     </>
   );
