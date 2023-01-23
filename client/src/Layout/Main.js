@@ -8,6 +8,10 @@ const Main = () => {
   /*  if (!token) {
     return <Navigate to={"/login"}></Navigate>;
   } */
+
+  const logoutHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <div id="defaultLayout">
@@ -27,7 +31,12 @@ const Main = () => {
         <div className="content">
           <header>
             <div>Header</div>
-            <div>User Info</div>
+            <div>
+              {user.name}{" "}
+              <Link to={""} onClick={logoutHandler} className="btn-logout">
+                Logout
+              </Link>
+            </div>
           </header>
           <main>
             <Outlet></Outlet>
