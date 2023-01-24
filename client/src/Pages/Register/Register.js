@@ -9,6 +9,8 @@ const Register = () => {
     <div className="login-signup-form animated fadeInDown">
       <div className="form">
         <form onSubmit={registerHandler}>
+          <h1 className="title">Signup for Free</h1>
+
           <input type="text" placeholder="Full Name" />
           <input type="email" placeholder="Email Address" />
           <input type="password" placeholder="Password" />
